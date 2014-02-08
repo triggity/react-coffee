@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      vendor: {
+      vendorscript: {
         files: [
           {
             expand: true,
@@ -57,7 +57,17 @@ module.exports = function(grunt) {
             dest: 'static/js/'
           }
         ]
-      }
+      },
+      vendorstyle: {
+        files: [
+          {
+            expand: true,
+            cwd: 'static/less/',
+            src: ['vendor/*'],
+            dest: 'static/css/'
+          }
+        ]
+      },
     },
     less: {
       dev: {
@@ -88,7 +98,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('build', ['coffee', 'react', 'copy:vendor', 'less']);
+  grunt.registerTask('build', ['coffee', 'react', 'copy', 'less']);
 
 
 };
