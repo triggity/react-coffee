@@ -14,7 +14,18 @@ require.config
     "jquery.bootstrap":
       deps: ['jquery']
 
-require ['comp', 'React', "jquery", "jquery.bootstrap"], (Comp, React, $, jqb) ->
-  React.renderComponent `<Comp name='yes'/>`, document.getElementById('yes')
-  que = (i) -> i + 2
-  console.log que(5)
+require [
+  'lib/run/run'
+  'React'
+  "jquery"
+  "jquery.bootstrap"
+], (Comp, React, $, jqb) ->
+  req = $.ajax {url: '/runs', type: 'GET'}
+  req.done (resp) =>
+    # this is just because i dont 
+    item = resp['3688649277079218806']
+    { build, id, completed, create_time, exit_code } = item
+    result = { build, id, completed, create_time, exit_code }
+    React.renderComponent (Comp result), document.getElementById('yes')
+    return
+  return

@@ -73,3 +73,4 @@ module.exports = (grunt) ->
   
     grunt.registerTask 'default', ['jshint']
     grunt.registerTask 'build', ['coffee', 'react', 'copy', 'less']
+    grunt.registerTask 'bwatch', ['build', 'watch']
