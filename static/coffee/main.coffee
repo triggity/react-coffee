@@ -14,7 +14,7 @@ require.config
     "jquery.bootstrap":
       deps: ['jquery']
 
-require ['comp', 'React', "jquery.bootstrap"], (Comp, React) ->
-  React.renderComponent `<Comp name="John" />`, document.getElementById('yes')
+require ['comp', 'React', "jquery", "jquery.bootstrap"], (Comp, React, $, jqb) ->
+  React.renderComponent `<Comp name='yes'/>`, document.getElementById('yes')
   que = (i) -> i + 2
   console.log que(5)
