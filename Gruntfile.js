@@ -11,14 +11,16 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['static/**/*.js']          
+      files: ['static/**/*.coffee']          
     },
     coffee: {
       // Builds all coffee files to static/js mirroring componentry
       glob_to_multiple: {
         expand: true,
         options: {
-          bare: true
+          bare: true,
+          sourceMap: true,
+          sourceMapDir: 'static/js/'
         },
         cwd: 'static/coffee',
         src: ['**/*.coffee'],
