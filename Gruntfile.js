@@ -58,6 +58,22 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    less: {
+      dev: {
+        options: {
+          sourceMap: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'static/less/',
+            src: ['**/*.less'],
+            dest: 'static/css/',
+            ext: '.css'
+          }
+        ]  
+      }
     }
   });
   //
@@ -67,11 +83,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-react');
 
 
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('build', ['coffee', 'react', 'copy:vendor']);
+  grunt.registerTask('build', ['coffee', 'react', 'copy:vendor', 'less']);
 
 
 };
