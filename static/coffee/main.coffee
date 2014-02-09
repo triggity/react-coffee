@@ -18,17 +18,9 @@ require.config
       deps: ['jquery']
 
 require [
-  'widget/run/run'
+  'widget/run/runlist'
   'React'
   "jquery"
   "jquery.bootstrap"
-], (Run, React, $, jqb) ->
-  req = $.ajax {url: '/runs', type: 'GET'}
-  req.done (resp) =>
-    # this is just because i dont 
-    item = resp['3688649277079218806']
-    { build, id, completed, create_time, exit_code, elapsed_time } = item
-    result = { build, id, completed, create_time, exit_code, elapsed_time }
-    React.renderComponent (Run result), document.getElementById('yes')
-    return
-  return
+], (RunList, React, $, jqb) ->
+  React.renderComponent (RunList {}), document.getElementById('yes')
