@@ -8,35 +8,23 @@ define [
   {div, tr, td} = React.DOM
   # prettier settimeout for coffeescript
   delay = (ms, func) -> setTimeout func, ms
+
+  getStatus = (create_time, exit_code, completed) ->
+    status_state = switch
+      when not create_time then 'pending'
+      when completed and not exit_code then 'success'
+      when completed and exit_code then 'failure'
+      when not completed and not exit_code then 'running'
+      else 'unkonwn'
+
   Run = React.createClass
     getInitialState: -> 
       { completed, create_time, exit_code } = @props
       result = { completed, create_time, exit_code }
-    componentDidMount: (node) ->
-        delay 5000, () => 
-          result = 
-            completed: true 
-            create_time: @state['create_time'] + 'woooooooooooo'
-            exit_code: 99
-          @setState(result)
-        # req = $.ajax {url: '/runs', type: 'GET'}
-        # req.done (resp) =>
-        #   # this is just because i dont 
-        #   item = resp['result']
-        #   {build, id, completed} = item
-        #   result = {build, id, completed}
-        #   @setState(result) 
-        #   return
-        # return
       
     render: ->
       {create_time, exit_code, completed} = @state
-      status_state = switch
-        when not create_time then 'pending'
-        when completed and not exit_code then 'success'
-        when completed and exit_code then 'failure'
-        when not completed and not exit_code then 'running'
-        else 'noooo'
+      status_state = getStatus create_time, exit_code, completed
 
       (tr {}, [
         (td {className: 'ars'}, [@props.id])

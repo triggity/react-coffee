@@ -35,7 +35,7 @@ module.exports = (grunt) ->
         ]
     watch:
       scripts: 
-        files: ['static/coffee/**/*.coffee']
+        files: ['static/coffee/**/*.coffee', 'static/less/**/*.less']
         tasks: ['build']
     copy:
       vendorscript: 
