@@ -1,6 +1,6 @@
 `/** @jsx React.DOM */`
 define ['React'], (React) ->
-  {div} = React.DOM
+  {div, td} = React.DOM
   StartTime = React.createClass
     getDefaultProps: -> 
       #defaults to epoch
@@ -11,6 +11,6 @@ define ['React'], (React) ->
       
     render: ->
       date_string = @epochToDate(@props.time)
-      (div {}, ["Date " +  date_string ])
+      (td {}, [date_string ])
 
   return StartTime 

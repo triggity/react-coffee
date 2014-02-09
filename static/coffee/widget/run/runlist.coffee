@@ -1,11 +1,13 @@
 `/** @jsx React.DOM */`
 define [
   'React',
-  'widget/run/run'
-], (React, Run) ->
-  {div} = React.DOM
+  'widget/run/run',
+  'widget/run/tablehead'
+], (React, Run, TableHead) ->
+  {div, table, tr, td, tbody} = React.DOM
   # prettier settimeout for coffeescript
   delay = (ms, func) -> setTimeout func, ms
+  tableFields = ['id', 'build', 'create_time', 'elapsed_time', 'status']
   RunList = React.createClass
     getInitialState: -> 
       result = { runs: []}
@@ -21,6 +23,9 @@ define [
       
     render: ->
       runNodes = [(Run attr) for attr in @state.runs]
-      (div {className: "runList"}, [runNodes])
+      (table {className: "runList table table-striped"}, [
+        (TableHead {tableFields: tableFields})  
+        (tbody {}, [ runNodes ])  
+      ])
 
   return RunList 

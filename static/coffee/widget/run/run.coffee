@@ -5,7 +5,7 @@ define [
   'widget/run/start_time',
   'widget/run/elapsed_time'
 ], (React, status, start_time, elapsed_time) ->
-  {div} = React.DOM
+  {div, tr, td} = React.DOM
   # prettier settimeout for coffeescript
   delay = (ms, func) -> setTimeout func, ms
   Run = React.createClass
@@ -38,10 +38,9 @@ define [
         when not completed and not exit_code then 'running'
         else 'noooo'
 
-      (div {}, [
-        (div {className: 'ars'}, ['id: ' + @props.id])
-        (div {}, ['Build : ' + @props.build])
-        (div {}, ['Completed: ' + @state.completed])
+      (tr {}, [
+        (td {className: 'ars'}, [@props.id])
+        (td {}, [ @props.build])
         (start_time {time: @props.create_time})
         (elapsed_time {time: @props.elapsed_time})
         (status {status: status_state})

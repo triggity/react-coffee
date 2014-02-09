@@ -1,6 +1,7 @@
 `/** @jsx React.DOM */`
 define ['React'], (React) ->
-  {button} = React.DOM
+  {button, td} = React.DOM
+  delay = (ms, func) -> setTimeout func, ms
   classMap =
     success: 'btn-success'
     failure: 'btn-danger'
@@ -12,6 +13,8 @@ define ['React'], (React) ->
       
     render: ->
       btnClass = classMap[@props.status] 
-      (button {type: 'button', className: 'btn ' + btnClass}, ["status : " +  @props.status ])
+      (td {}, [
+        (button {type: 'button', className: 'btn ' + btnClass}, [@props.status ])
+      ])
 
   return Run 
