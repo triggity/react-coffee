@@ -23,4 +23,4 @@ require [
   "jquery"
   "jquery.bootstrap"
 ], (RunList, React, $, jqb) ->
-  React.renderComponent (RunList {}), document.getElementById('yes')
+  React.renderComponent (RunList {}), document.getElementById('hatchruns')
