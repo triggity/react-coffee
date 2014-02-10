@@ -29,9 +29,9 @@ define [
       (tr {}, [
         (td {className: 'ars'}, [@props.id])
         (td {}, [ @props.build])
-        (start_time {time: @props.create_time})
-        (elapsed_time {time: @props.elapsed_time})
-        (status {status: status_state})
+        (td {}, [start_time {time: @props.create_time}])
+        (td {}, [elapsed_time {time: @props.elapsed_time}])
+        (td {}, [status {status: status_state}])
       ])
 
   return Run 

@@ -1,6 +1,6 @@
 `/** @jsx React.DOM */`
 define ['React', 'underscore'], (React, _) ->
-  {div, td} = React.DOM
+  {div, td, span} = React.DOM
   secondsToPretty = (seconds) ->
     sec_num = parseInt seconds, 10 
     hours = Math.floor sec_num/3600
@@ -22,6 +22,6 @@ define ['React', 'underscore'], (React, _) ->
       
     render: ->
       date_string = secondsToPretty @props.time
-      (td {}, [date_string ])
+      (span {}, [date_string ])
 
   return ElapsedTime 

@@ -13,8 +13,6 @@ define ['React'], (React) ->
       
     render: ->
       btnClass = classMap[@props.status] 
-      (td {}, [
-        (button {type: 'button', className: 'btn ' + btnClass}, [@props.status ])
-      ])
+      (button {type: 'button', className: 'btn ' + btnClass}, [@props.status ])
 
   return Run 
