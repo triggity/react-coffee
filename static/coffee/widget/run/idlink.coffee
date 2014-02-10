@@ -7,7 +7,7 @@ define ['React'], (React) ->
       { id: 1}
       
     render: ->
-      link = "/run/#{@props.id}"
+      link = "run/#{@props.id}"
       (a {href: link}, [@props.id])
 
   return IdLink 

@@ -1,11 +1,12 @@
 `/** @jsx React.DOM */`
 define [
-  'React',
-  'widget/run/idlink',
-  'widget/run/status',
-  'widget/run/start_time',
+  'React'
+  'widget/run/idlink'
+  'widget/run/buildlink'
+  'widget/run/status'
+  'widget/run/start_time'
   'widget/run/elapsed_time'
-], (React, idlink, status, start_time, elapsed_time) ->
+], (React, idlink, buildlink, status, start_time, elapsed_time) ->
   {div, tr, td} = React.DOM
   # prettier settimeout for coffeescript
   delay = (ms, func) -> setTimeout func, ms
@@ -29,7 +30,7 @@ define [
 
       (tr {}, [
         (td {}, [idlink {id: @props.id}])
-        (td {}, [ @props.build])
+        (td {}, [buildlink {id: @props.build}])
         (td {}, [start_time {time: @props.create_time}])
         (td {}, [elapsed_time {time: @props.elapsed_time}])
         (td {}, [status {status: status_state}])
