@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 module.exports = (grunt) -> 
   grunt.initConfig
@@ -18,7 +18,6 @@ module.exports = (grunt) ->
         options:
           bare: true
           sourceMap: true
-          sourceMapDir: 'static/js/'
         cwd: 'static/coffee'
         src: ['**/*.coffee']
         dest: 'static/jsx'
@@ -52,6 +51,13 @@ module.exports = (grunt) ->
           src: ['vendor/*']
           dest: 'static/css/'
         ]
+      sourcemaps: 
+        files: [
+          expand: true,
+          cwd: 'static/jsx/'
+          src: ['**/*.map']
+          dest: 'static/js/'
+        ]
     less: 
       dev:
         options: 
@@ -63,14 +69,16 @@ module.exports = (grunt) ->
           dest: 'static/css/'
           ext: '.css'
         ]  
-
+    clean:
+      jsx: ["static/jsx"]
     grunt.loadNpmTasks 'grunt-contrib-jshint' 
     grunt.loadNpmTasks 'grunt-contrib-coffee' 
     grunt.loadNpmTasks 'grunt-contrib-watch' 
     grunt.loadNpmTasks 'grunt-contrib-copy' 
     grunt.loadNpmTasks 'grunt-contrib-less' 
     grunt.loadNpmTasks 'grunt-react' 
+    grunt.loadNpmTasks('grunt-contrib-clean')
   
     grunt.registerTask 'default', ['jshint']
-    grunt.registerTask 'build', ['coffee', 'react', 'copy', 'less']
+    grunt.registerTask 'build', ['coffee', 'react', 'less', 'copy', 'clean']
     grunt.registerTask 'bwatch', ['build', 'watch']
