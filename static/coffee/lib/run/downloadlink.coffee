@@ -11,3 +11,4 @@ define ['React'], (React) ->
       (button attr, ['Download Me'])
 
   return DownloadLink 
+#<span class="glyphicon glyphicon-search"></span>

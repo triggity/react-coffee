@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Run{% endblock %}
+
+{% block requirelooad %}
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script data-main="{{ url_for('.static', filename='js/views/run.js') }}" src="{{ url_for('.static', filename='js/vendor/require.js') }}" ></script>
+  <script>
+    console.log("asdfasdfsd {{ runid }}")
+  </script>
+
+{% endblock %}

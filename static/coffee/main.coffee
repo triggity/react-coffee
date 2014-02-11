@@ -4,14 +4,16 @@
  */
 `
 "use strict"
-
 require.config
   paths:
-    React: "vendor/react"
-    "jquery.bootstrap":"vendor/bootstrap"
-    jquery: "vendor/jquery-2.1.0"
-    underscore: "vendor/underscore"
-    strftime: "vendor/strftime"
+    lib: "../lib"
+    widget: "../widget"
+    vendor: "../vendor"
+    React: "../vendor/react"
+    "jquery.bootstrap":"../vendor/bootstrap"
+    jquery: "../vendor/jquery-2.1.0"
+    underscore: "../vendor/underscore"
+    strftime: "../vendor/strftime"
   shim:
     underscore:
       exports: "_"
@@ -20,11 +22,3 @@ require.config
     strftime:
       exports: 'strftime'
 
-require [
-  'widget/run/runlist'
-  'React'
-  "jquery"
-  "jquery.bootstrap"
-  "strftime"
-], (RunList, React, $, jqb, strftime) ->
-  React.renderComponent (RunList {}), document.getElementById('hatchruns')

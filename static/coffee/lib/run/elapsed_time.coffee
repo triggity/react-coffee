@@ -1,5 +1,5 @@
 `/** @jsx React.DOM */`
-define ['React', 'underscore'], (React, _) ->
+define ['React'], (React) ->
   {div, td, span} = React.DOM
   secondsToPretty = (seconds) ->
     sec_num = parseInt seconds, 10 
