@@ -8,8 +8,6 @@ define [
   'widget/run/elapsed_time'
 ], (React, idlink, buildlink, status, start_time, elapsed_time) ->
   {div, tr, td} = React.DOM
-  # prettier settimeout for coffeescript
-  delay = (ms, func) -> setTimeout func, ms
 
   getStatus = (create_time, exit_code, completed) ->
     status_state = switch

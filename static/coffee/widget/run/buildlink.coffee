@@ -7,7 +7,6 @@ define ['React'], (React) ->
       { build: "base"}
       
     render: ->
-      console.log @props.build
       link = "build/#{@props.build}"
       (a {href: link}, [@props.build])
 
