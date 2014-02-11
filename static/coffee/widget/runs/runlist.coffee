@@ -1,12 +1,10 @@
 `/** @jsx React.DOM */`
 define [
   'React',
-  'widget/run/run',
-  'widget/run/tablehead'
+  'widget/runs/run',
+  'widget/runs/tablehead'
 ], (React, Run, TableHead) ->
   {div, table, tr, td, tbody} = React.DOM
-  # prettier settimeout for coffeescript
-  delay = (ms, func) -> setTimeout func, ms
   tableFields = ['id', 'build', 'create_time', 'elapsed_time', 'status']
   RunList = React.createClass
     getInitialState: -> 

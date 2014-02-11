@@ -1,11 +1,11 @@
 `/** @jsx React.DOM */`
 define [
   'React'
-  'widget/run/idlink'
-  'widget/run/buildlink'
-  'widget/run/status'
-  'widget/run/start_time'
-  'widget/run/elapsed_time'
+  'lib/run/idlink'
+  'lib/run/buildlink'
+  'lib/run/status'
+  'lib/run/start_time'
+  'lib/run/elapsed_time'
 ], (React, idlink, buildlink, status, start_time, elapsed_time) ->
   {div, tr, td} = React.DOM
 
