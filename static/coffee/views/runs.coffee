@@ -6,7 +6,7 @@
 "use strict"
 require [ '../main' ], -> 
   require [
-    'widget/builds/builds'
+    'widget/runs/runlist'
     'React'
     "jquery.bootstrap"
     "strftime"
