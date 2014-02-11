@@ -11,3 +11,7 @@ def runs():
 @mod.route('/run/<int:run_id>', methods=['GET', 'DELETE'])
 def run_id(run_id):
     return render_template('run.html', runid=run_id)
+
+@mod.route('/builds', methods=['GET'])
+def builds():
+    return render_template('builds.html')

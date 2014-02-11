@@ -10,5 +10,5 @@ require [ '../main' ], ->
     'React'
     "jquery.bootstrap"
     "strftime"
-  ], (RunList, React, jqb, strftime) ->
-    React.renderComponent (RunList {}), document.getElementById('content')
+  ], (Builds, React, jqb, strftime) ->
+    React.renderComponent (Builds  {}), document.getElementById('content')
