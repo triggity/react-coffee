@@ -6,6 +6,7 @@
   <script data-main="{{ url_for('.static', filename='js/views/run.js') }}" src="{{ url_for('.static', filename='js/vendor/require.js') }}" ></script>
   <script>
     console.log("asdfasdfsd {{ runid }}")
+    var runid = "{{ runid }}"
   </script>
 
 {% endblock %}

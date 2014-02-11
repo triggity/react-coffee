@@ -1,8 +1,8 @@
 `/** @jsx React.DOM */`
 define [
-  'React',
-  'widget/runs/run',
-  'widget/runs/tablehead'
+  'React'
+  'widget/runs/run'
+  'lib/run/tablehead'
 ], (React, Run, TableHead) ->
   {div, table, tr, td, tbody} = React.DOM
   tableFields = ['id', 'build', 'create_time', 'elapsed_time', 'status']

@@ -6,9 +6,9 @@
 "use strict"
 require [ '../main' ], -> 
   require [
-    'widget/run/runlist'
+    'widget/runs/runlist'
     'React'
     "jquery.bootstrap"
     "strftime"
   ], (RunList, React, jqb, strftime) ->
-    React.renderComponent (RunList {}), document.getElementById('hatchruns')
+    React.renderComponent (RunList {}), document.getElementById('content')
